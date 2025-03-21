@@ -1,19 +1,10 @@
-/* My Awesome Styles */
-
-/* Diagnostic Styling 
-  * Change Background Color
-  * Outline Elements
-*/
-
-* {
-    outline: 1px dotted black;
-}
-
 /* Doodle Stage */
 #stage {
-  background: #ccc;
+  background: #ffffff;
   height: 300px;
   width: 600px;
+  overflow: hidden;
+  position: relative; 
 }
 
 #heart1 {
@@ -22,4 +13,130 @@
 
 #heart2 {
   fill: green;
+}
+
+#big-g {
+  fill: #4285F4;
+}
+#small-g {
+  fill: #4285F4;
+}
+#o2 {
+  fill: #FBBC05;
+}
+#o1 {
+  fill: #EA4335;
+}
+#e {
+  fill: #EA4335;
+}
+#l {
+  fill: #34A853;
+}
+
+#stage svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: scale(2) translateY(100px);
+  transform-origin: center center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: white;
+  margin: 0;
+  flex-direction: column; 
+}
+
+.dna {
+  display: none;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 21vh; 
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 3vh;
+}
+
+.column:nth-of-type(3) {
+  position: absolute;
+  left: 0;
+}
+
+.dot {
+  display: block;
+  width: 3vh;
+  height: 3vh;
+  margin-bottom: 3vh;
+  border-radius: 50%;
+  background-color: mediumvioletred;
+  animation: molecule-animation 1.4s ease-in-out infinite alternate;
+}
+
+.column:nth-of-type(3) .dot {
+  background-color: palevioletred;
+  animation-direction: alternate-reverse;
+}
+
+.dash {
+  display: block;
+  height: 1vh;
+  width: 12vh; 
+  margin-top: 1vh;
+  margin-bottom: 4vh;
+  margin-left: 1.5vh;
+  border-radius: 0.5vh;
+  background-color: silver;
+  animation: connection-animation 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes molecule-animation {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(18vh, 0, 0); } 
+}
+
+@keyframes connection-animation {
+  from { transform: scale3d(1, 1, 1); }
+  to { transform: scale3d(0, 1, 1); }
+}
+
+.dna .dot:nth-of-type(1),
+.dna .dash:nth-of-type(1) {
+  animation-delay: -0.175s;
+}
+.dna .dot:nth-of-type(2),
+.dna .dash:nth-of-type(2) {
+  animation-delay: -0.35s;
+}
+.dna .dot:nth-of-type(3),
+.dna .dash:nth-of-type(3) {
+  animation-delay: -0.525s;
+}
+.dna .dot:nth-of-type(4),
+.dna .dash:nth-of-type(4) {
+  animation-delay: -0.7s;
+}
+.dna .dot:nth-of-type(5),
+.dna .dash:nth-of-type(5) {
+  animation-delay: -0.875s;
+}
+.dna .dot:nth-of-type(6),
+.dna .dash:nth-of-type(6) {
+  animation-delay: -1.05s;
+}
+.dna .dot:nth-of-type(7),
+.dna .dash:nth-of-type(7) {
+  animation-delay: -1.225s;
+}
+.dna .dot:nth-of-type(8),
+.dna .dash:nth-of-type(8) {
+  animation-delay: -1.4s;
 }
